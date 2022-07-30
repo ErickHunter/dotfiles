@@ -23,16 +23,10 @@ alias view=view -M		# Use view as unmodifiable
 # Reload zsh config
 alias reload!='RELOAD=1 source ~/.zshrc'
 
-# Use gopass instead of pass
-alias pass=gopass
-
 # OS specific configurations
 case `uname` in
 	Darwin)
 		# OS X
-
-		# Fix list files
-		alias ls="gl -lphH --color=auto --time-style=long-iso"
 
 		# Macos dns flush
 		alias dns_flush="sudo dscacheutil -flushcache;sudo killall -HUP mDNSResponder"
