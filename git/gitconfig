@@ -1,0 +1,104 @@
+## General gitconfig ##
+
+[user]
+	name = "Erick Hunter"
+	email = "git@erickhunter.com"
+	signingkey = ""
+
+[github]
+	user = erickhunter
+
+[alias]
+	co = checkout
+	cm = commit --message
+	s = status --short
+	d = difftool
+	df = diff
+	b = branch
+	l = log --pretty=oneline --max-count=50 --graph --abbrev-commit --decorate --all
+
+	tags = tag --list
+	branches = branch --all
+	remotes = remote --verbose
+
+[core]
+	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
+
+	eol = lf
+	autocrlf = input
+	autocrlf = input
+
+	whitespace = space-before-tab,-indent-with-non-tab,trailing-space,blank-at-eol,blank-at-eof
+
+	trustctime = false		# http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/
+	precomposeunicode = false	# http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+	untrackedCache = true		# https://git-scm.com/docs/git-update-index#_untracked_cache
+
+[apply]
+	whitespace = fix
+
+[commit]
+	template = ~/.gitmessage
+	gpgsign = false
+
+[push]
+	default = simple
+	followTags = true
+
+[pull]
+	rebase = merges			# "preserve" option is deprecated in favor of "merges" - https://github.com/git/git/commit/fa1b86e45743fd5895c33adcd3769782e608bb40
+
+[merge]
+	renormalize = true
+
+[diff]
+	tool = vimdiff
+	renames = copies
+
+[difftool]
+        prompt = false
+
+## Color schemes ## 
+
+[color]
+	branch = always
+	diff = always
+	grep = always
+	interactive = always
+	pager = true
+	showbranch = auto
+	status = auto
+	ui = always
+
+[color "decorate"]
+	head = bold white
+	branch = bold magenta
+	remotebranch = blue
+	tag = bold red
+
+[color "interactive"]
+	error = red bold
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow
+	frag = magenta
+	old = red
+	new = green
+	whitespace = white reverse
+
+[color "status"]
+	added = yellow
+	changed = red
+	untracked = cyan
+	branch = magenta
+
+## URL Shorthands ##
+
+[url "git@github.com:"]
+	insteadof = github:	
